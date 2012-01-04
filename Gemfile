@@ -34,9 +34,10 @@ gem 'rails_helpers_fix'
 
 group :development do
   gem 'awesome_print'
-  gem 'capistrano'
-  gem 'capistrano-ext'
-  gem 'rvm' # RVM API (for capistrano deployments)
+  # gem 'capistrano'
+  # gem 'capistrano-ext'
+  # gem 'rvm' # RVM API (for capistrano deployments)
+  gem 'inploy'
 end
 
 group :development, :test do
