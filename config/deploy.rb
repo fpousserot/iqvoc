@@ -1,4 +1,4 @@
-application = "iqvoc"
+application = "iqvoc-inploy"
 repository = 'git://github.com/innoq/iqvoc.git'
 hosts = ['']
 path = '/var/www'
