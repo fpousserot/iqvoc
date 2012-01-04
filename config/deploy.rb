@@ -3,7 +3,7 @@ repository = 'git://github.com/innoq/iqvoc.git'
 hosts = ['iqvoc.innoq.com']
 path = '/var/www'
 ssh_opts = '-A'
-# branch = 'inploy'
+branch = 'inploy'
 user = 'iqvoc'
 login_shell = true
 
