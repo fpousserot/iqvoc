@@ -1,9 +1,11 @@
-application = "iqvoc-inploy"
+application = "iqvoc_inploy"
 repository = 'git://github.com/innoq/iqvoc.git'
-hosts = ['']
+hosts = ['iqvoc.innoq.com']
 path = '/var/www'
 ssh_opts = '-A'
-branch = 'inploy'
+# branch = 'inploy'
+user = 'iqvoc'
+login_shell = true
 
 # before_restarting_server do
 #   rake "important:task"
