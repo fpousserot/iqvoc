@@ -26,7 +26,7 @@ gem 'authlogic'
 gem 'cancan'
 gem 'iq_rdf', '~> 0.0.15'
 gem 'json'
-gem 'inploy'
+gem 'inploy', :path => "~/github/inploy"
 
 # Hotfix for the problem of engine/plugin helpers not being mixed in.
 # https://rails.lighthouseapp.com/projects/8994/tickets/1905-apphelpers-within-plugin-not-being-mixed-in
