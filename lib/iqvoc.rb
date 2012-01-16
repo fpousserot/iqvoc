@@ -29,12 +29,21 @@ module Iqvoc
     :default_rdf_namespace_helper_methods,
     :rdf_namespaces,
     :change_note_class_name,
-    :additional_js_files,
-    :additional_css_files,
     :first_level_class_configuration_modules,
-    :ability_class_name
+    :ability_class_name,
+    :core_assets
 
   self.title = "iQvoc"
+
+  self.core_assets = %w(
+    manifest.css
+    manifest.js
+    blueprint/ie.css
+    iqvoc/ie_fixes.css
+    excanvas.js
+    jit_rgraph.js
+    iqvoc/visualization.js
+  )
 
   self.searchable_class_names = [
     'Labeling::SKOS::Base',
@@ -58,10 +67,6 @@ module Iqvoc
   # The class to use for automatic generation of change notes on every save
   self.change_note_class_name = 'Note::SKOS::ChangeNote'
 
-  # Use these config hooks in your engine to inject your custom js and css includes.
-  self.additional_js_files  = []
-  self.additional_css_files = []
-
   self.first_level_class_configuration_modules = [] # Will be set in the modules
 
   self.ability_class_name = 'Iqvoc::Ability'
@@ -80,6 +85,25 @@ module Iqvoc
 
   def self.ability_class
     ability_class_name.constantize
+  end
+
+  def self.generate_secret_token
+    require 'securerandom'
+
+    template = Rails.root.join("config", "initializers", "secret_token.rb.template")
+    raise "File not found: #{template}" unless File.exist?(template)
+
+    file_name = "config/initializers/secret_token.rb"
+
+    token = SecureRandom.hex(64)
+    txt = File.read(template)
+    txt.gsub!("S-E-C-R-E-T", token)
+
+    File.open(file_name, "w") do |f|
+      f.write txt
+    end
+
+    puts "Secret token configuration has been created in #{file_name}."
   end
 
   # ************** Concept specific settings **************

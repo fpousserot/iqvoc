@@ -19,30 +19,32 @@ source 'http://rubygems.org'
 # TODO: The following dependencies could be included by the "gemspec" command.
 # There is only one problem: gemspec puts the dependencies automatically to a
 # group (:development by default). This is not what we need.
-gem 'rails', '3.0.10'
+gem 'rails', '3.1.3'
+
+group :assets do
+  gem 'uglifier'
+  gem 'therubyracer'
+end
 
 gem 'kaminari'
 gem 'authlogic'
 gem 'cancan'
-gem 'iq_rdf', '~> 0.0.15'
+gem 'iq_rdf', '~> 0.1.0'
 gem 'json'
-gem 'inploy', :path => "~/github/inploy"
-
-# Hotfix for the problem of engine/plugin helpers not being mixed in.
-# https://rails.lighthouseapp.com/projects/8994/tickets/1905-apphelpers-within-plugin-not-being-mixed-in
-# http://github.com/drogus/rails_helpers_fix
-gem 'rails_helpers_fix'
+gem 'rails_autolink'
 
 group :development do
   gem 'awesome_print'
-  # gem 'capistrano'
-  # gem 'capistrano-ext'
-  # gem 'rvm' # RVM API (for capistrano deployments)
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'rvm' # RVM API (for capistrano deployments)
+  gem 'heroku'
+  gem 'inploy', :git => 'git://github.com/dcrec1/inploy.git'
 end
 
 group :development, :test do
   platforms :ruby do
-    gem 'mysql2', '0.2.7'
+    gem 'mysql2'
     gem 'sqlite3'
   end
   
@@ -53,7 +55,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'nokogiri', '1.5.0'
+  gem 'nokogiri', '~> 1.5.0'
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'database_cleaner'
@@ -62,7 +64,7 @@ group :test do
   gem 'turn'
 end
 
-group :production, :production_internal do
+group :production do
   platforms :ruby do
     gem 'sqlite3'
   end
@@ -70,4 +72,8 @@ group :production, :production_internal do
   platforms :jruby do
     gem 'activerecord-oracle_enhanced-adapter'
   end
+end
+
+group :heroku do
+  gem 'pg'
 end
