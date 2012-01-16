@@ -1,6 +1,5 @@
-GIT
-  remote: git://github.com/dcrec1/inploy.git
-  revision: ca020759cdef9d901bb5a54cb9e79d3f787b62dd
+PATH
+  remote: ~/github/inploy
   specs:
     inploy (1.9.5)
 
