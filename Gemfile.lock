@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/mrreynolds/inploy.git
-  revision: d5c33ce7966df220cd836d8df8f556ce02a6df9f
+  revision: 4d7187e71303ca25861a08a868417935e1b50119
   branch: master
   specs:
     inploy (1.9.5)
