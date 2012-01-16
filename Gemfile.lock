@@ -1,5 +1,7 @@
-PATH
-  remote: ~/github/inploy
+GIT
+  remote: git://github.com/mrreynolds/inploy.git
+  revision: 9991cdfa18d5dd14f8120ee457a204903c948ce6
+  branch: rake_cmd_fix
   specs:
     inploy (1.9.5)
 

@@ -6,6 +6,7 @@ ssh_opts = '-A'
 branch = 'inploy'
 user = 'iqvoc'
 login_shell = true
+bundler_opts = '--deployment --quiet --binstubs --without development test heroku'
 
 # before_restarting_server do
 #   rake "important:task"

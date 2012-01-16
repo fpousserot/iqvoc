@@ -32,7 +32,7 @@ gem 'cancan'
 gem 'iq_rdf', '~> 0.1.0'
 gem 'json'
 gem 'rails_autolink'
-gem 'inploy', :path => '~/github/inploy' # :git => 'git://github.com/dcrec1/inploy.git'
+gem 'inploy', :git => 'git://github.com/mrreynolds/inploy.git', :branch => 'rake_cmd_fix'
 
 group :development do
   gem 'awesome_print'
