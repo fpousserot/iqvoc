@@ -9,8 +9,7 @@ login_shell = true
 bundler_opts = '--deployment --without development test heroku'
 
 # before_restarting_server do
-#   rake "important:task"
-#   run "important_command"
+#   rake "assets:precompile"
 # end
 
 # user = 'iqvoc'
